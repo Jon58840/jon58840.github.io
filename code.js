@@ -6,9 +6,9 @@ function getStats(txt) {
         nChars: nCharsFunc(txt),
         nWords: nWordsFunc(txt),
         nLines: nLinesFunc(txt),
-        nNonEmptyLines: 22,
-        averageWordLength: 3.3,
-        maxLineLength: 33,
+        nNonEmptyLines:  nNonEmptyLinesFuncFunc(txt),
+        averageWordLength: averageWordLengthFunc(txt),
+        maxLineLength: maxLineLengthFunc(txt),
         palindromes: ["12321", "kayak", "mom"],
         longestWords: ["xxxxxxxxx", "123444444"],
         mostFrequentWords: ["hello(7)", "world(1)"]
@@ -30,8 +30,40 @@ function nWordsFunc(txt)
 }
 
 function nLinesFunc(txt)
-{
+{/*
 	var lineArray = currentString.match('\n');
 	var lineCount = 1 + lineArrray.length;
-	return lineCount;
+	return lineCount;*/
+	
+	return 10;
+}
+
+function nNonEmptyLinesFuncFunc(txt)
+{
+	return 22;
+}
+
+function averageWordLengthFunc(txt)
+{
+	return 3.3;
+}
+
+function maxLineLengthFunc(txt)
+{
+	return 33;
+}
+
+function palindromesFunc(txt)
+{
+	return 0;
+}
+
+function longestWordsFunc(txt)
+{
+	return 0;
+}
+
+function mostFrequentWordsFunc(txt)
+{
+	return 0;
 }
