@@ -45,7 +45,18 @@ function nNonEmptyLinesFuncFunc(txt)
 
 function averageWordLengthFunc(txt)
 {
-	return 3.3;
+	var currentString = txt;
+	currentString = currentString.toLowerCase();
+	var wordArray = currentString.match(/[a-z0-9]+/g);
+	
+	var letterCount = 0;
+	
+	for (int i = 0; i < wordArray.length; i++)
+	{
+		letterCount += wordArray[i].length;
+	}
+	
+	return letterCount / wordArray.length;
 }
 
 function maxLineLengthFunc(txt)
