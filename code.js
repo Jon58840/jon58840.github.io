@@ -31,12 +31,11 @@ function nWordsFunc(txt)
 }
 
 function nLinesFunc(txt)
-{/*
-	var lineArray = currentString.match('\n');
-	var lineCount = 1 + lineArrray.length;
-	return lineCount;*/
+{
+	var lineArray = currentString.split("\n");
+	return lineArray.length;
 	
-	return 10;
+	//return 10;
 }
 
 function nNonEmptyLinesFuncFunc(txt)
