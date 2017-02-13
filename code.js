@@ -32,5 +32,6 @@ function nWordsFunc(txt)
 function nLinesFunc(txt)
 {
 	var lineArray = currentString.match('\n');
-	return lineArray.length;
+	var lineCount = 1 + lineArrray.length;
+	return lineCount;
 }
