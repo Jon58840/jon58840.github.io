@@ -48,15 +48,15 @@ function nNonEmptyLinesFuncFunc(txt)
 	
 	for (i = 0; i < lineArray.length; i++)
 	{//For each line in the array
-		if (lineArray[i].length != 0)
+		var trimmedLine = lineArray[i].trim();	//Remove whitespace
+
+		if (trimmedLine.length != 0)
 		{
 			nonEmptyLines++;
 		}
 	}
 	
 	return nonEmptyLines;
-	
-	//return 22;
 }
 
 function averageWordLengthFunc(txt)
