@@ -3,7 +3,7 @@
 //
 function getStats(txt) {
     return {
-        nChars: nCharsFunc(text),
+        nChars: nCharsFunc(txt),
         nWords: 22,
         nLines: 10,
         nNonEmptyLines: 22,
@@ -15,7 +15,7 @@ function getStats(txt) {
     };
 }
 
-function nCharsFunc(text)
+function nCharsFunc(txt)
 {
-	return text.length;
+	return txt.length;
 }
