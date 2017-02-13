@@ -4,7 +4,7 @@
 function getStats(txt) {
     return {
         nChars: nCharsFunc(txt),
-        nWords: 22,
+        nWords: nWordsFunc(txt),
         nLines: 10,
         nNonEmptyLines: 22,
         averageWordLength: 3.3,
@@ -18,4 +18,13 @@ function getStats(txt) {
 function nCharsFunc(txt)
 {
 	return txt.length;
+}
+
+function nWordsFunc(txt)
+{
+	var currentString = txt;
+	currentString = currentString.toLowerCase();
+	var wordArray = currentString.match((/[a-z0-9]+/g);
+	
+	return wordArray.length;
 }
