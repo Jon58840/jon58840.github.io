@@ -24,7 +24,7 @@ function nWordsFunc(txt)
 {
 	var currentString = txt;
 	currentString = currentString.toLowerCase();
-	var wordArray = currentString.match((/[a-z0-9]+/g);
+	var wordArray = currentString.match(/[a-z0-9]+/g);
 	
 	return wordArray.length;
 }
