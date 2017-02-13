@@ -186,7 +186,7 @@ function longestWordsFunc(txt)
 }
 
 function mostFrequentWordsFunc(txt)
-{
+{/*
 	var currentString = txt;
 	currentString = currentString.toLowerCase();
 	var wordArray = currentString.match(/[a-z0-9]+/g);
@@ -226,7 +226,7 @@ function mostFrequentWordsFunc(txt)
 	
 	
 	return returnArray;
-	/*
+	*/
 	var dummyArray = ["hello(7)", "world(1)"];
-	return dummyArray;*/
+	return dummyArray;
 }
