@@ -190,6 +190,40 @@ function mostFrequentWordsFunc(txt)
 	var currentString = txt;
 	currentString = currentString.toLowerCase();
 	var wordArray = currentString.match(/[a-z0-9]+/g);
+	wordArray.sort();	//Sort array of words alphabetically
 	
-	return 0;
+	var foundWordsArray = [];
+	var countArray = [];
+	
+	if (wordArray.length == 0)
+	{//If no words, return empty array
+		return foundWordsArray;
+	}
+	
+	foundWordsArray.push(wordArray[0]);
+	countArray.push(1);
+	
+	var sortedIndex = 0;
+	for (i = 2; i < wordArray.length; i++)
+	{//For each word in the array
+		if (wordArray[i] == foundWordsArray[sortedIndex]
+		{//If we have more of the same word
+			countArray[sortedIndex]++;
+		}
+		else
+		{//Otherwise
+			foundWordsArray.push(wordArray[i]);
+			countArray.push(1);
+			sortedIndex++;
+		}
+	}
+	
+	var returnArray = []
+	for (i = 0; i < sortedIndex; i++)
+	{
+		returnArray.push(foundWordsArray[i] + "(" + countArray[i] + ")");
+	}
+	
+	
+	return returnArray;
 }
