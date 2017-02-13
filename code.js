@@ -9,7 +9,7 @@ function getStats(txt) {
         nNonEmptyLines:  nNonEmptyLinesFuncFunc(txt),
         averageWordLength: averageWordLengthFunc(txt),
         maxLineLength: maxLineLengthFunc(txt),
-        palindromes: ["12321", "kayak", "mom"],
+        palindromes: palindromesFunc(txt),
         longestWords: longestWordsFunc(txt),
         mostFrequentWords: ["hello(7)", "world(1)"]
     };
