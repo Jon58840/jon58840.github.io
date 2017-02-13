@@ -186,7 +186,7 @@ function longestWordsFunc(txt)
 }
 
 function mostFrequentWordsFunc(txt)
-{/*
+{
 	var currentString = txt;
 	currentString = currentString.toLowerCase();
 	var wordArray = currentString.match(/[a-z0-9]+/g);
@@ -218,15 +218,56 @@ function mostFrequentWordsFunc(txt)
 		}
 	}
 	
+	var mostCommonWord = 0;
+	
+	for (i = 0; i < countArray.length; i++)
+	{//For each word in the array, check if it is longer than current longest
+		if (countArray[i] > mostCommonWord)
+		{
+			mostCommonWord = countArray[i];
+		}
+	}
+	
+	var sortedWordsArray = [];
+	var countedWordsArray = [];
+	var currentWordInstances = mostCommonWord;
+    
+	while (sortedWordsArray.length < 10 && currentWordInstances > 0)
+	{//While our array of words is still less than 10 words
+		//Escape clause if we don't actually have enough words
+		var nextArray = [];
+		
+		for (i = 0; i < countArray.length; i++)
+		{//Go back through word array and collect all words equal to current most common word
+			if (countArray[i] == currentWordInstances)
+			{
+				nextArray.push(foundWordsArray[i]);
+			}
+		}
+		
+		nextArray.sort();	//Sort the elements of the array alphabetically
+		
+		var i = 0;
+		while (sortedWordsArray.length < 10 && i < nextArray.length)
+		{//While the array of longest words is still less than 10
+			//and we still have words left in the current array of long words
+			sortedWordsArray.push(nextArray[i]);
+			countedWordsArray.push(currentWordInstances);
+			i++;
+		}
+		
+		currentWordInstances--;
+	}
+	
 	var returnArray = []
-	for (i = 0; i < sortedIndex; i++)
+	for (i = 0; i < 10; i++)
 	{
-		returnArray.push(foundWordsArray[i] + "(" + countArray[i] + ")");
+		returnArray.push(sortedWordsArray[i] + "(" + countedWordsArray[i] + ")");
 	}
 	
 	
 	return returnArray;
-	*/
+	/*
 	var dummyArray = ["hello(7)", "world(1)"];
-	return dummyArray;
+	return dummyArray;*/
 }
