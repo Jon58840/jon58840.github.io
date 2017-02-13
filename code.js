@@ -204,9 +204,9 @@ function mostFrequentWordsFunc(txt)
 	countArray.push(1);
 	
 	var sortedIndex = 0;
-	for (i = 2; i < wordArray.length; i++)
+	for (i = 1; i < wordArray.length; i++)
 	{//For each word in the array
-		if (wordArray[i] == foundWordsArray[sortedIndex]
+		if (wordArray[i] == foundWordsArray[sortedIndex])
 		{//If we have more of the same word
 			countArray[sortedIndex]++;
 		}
@@ -226,4 +226,7 @@ function mostFrequentWordsFunc(txt)
 	
 	
 	return returnArray;
+	/*
+	var dummyArray = ["hello(7)", "world(1)"];
+	return dummyArray;*/
 }
