@@ -2,9 +2,8 @@
 // this is just a stub for a function you need to implement
 //
 function getStats(txt) {
-    return { txt
-		/*
-        nChars: nCharsFunc(txt),
+    return {
+        nChars: 123,
         nWords: 22,
         nLines: 10,
         nNonEmptyLines: 22,
@@ -12,7 +11,7 @@ function getStats(txt) {
         maxLineLength: 33,
         palindromes: ["12321", "kayak", "mom"],
         longestWords: ["xxxxxxxxx", "123444444"],
-        mostFrequentWords: ["hello(7)", "world(1)"]*/
+        mostFrequentWords: ["hello(7)", "world(1)"]
     };
 }
 /*
