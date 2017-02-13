@@ -51,7 +51,7 @@ function averageWordLengthFunc(txt)
 	
 	var letterCount = 0;
 	
-	for (int i = 0; i < wordArray.length; i++)
+	for (i = 0; i < wordArray.length; i++)
 	{
 		letterCount += wordArray[i].length;
 	}
