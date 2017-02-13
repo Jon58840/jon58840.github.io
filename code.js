@@ -90,14 +90,27 @@ function longestWordsFunc(txt)
 	var currentWordLength = longestWord;
     
 	while (longestWordsArray.length < 10 && currentWordLength > 0)
-	{
+	{//While our array of words is still less than 10 words
+		//Escape clause if we don't actually have enough words
 		var nextArray = [];
 		
 		for (i = 0; i < wordArray.length; i++)
 		{//Go back through word array and collect all words equal to longest word
 			if (wordArray[i].length == currentWordLength)
 			{
-				nextArray.push(wordArray[i]);
+				var uniqueWord = true;
+				for (j = 0; j < nextArray.length; j++)
+				{
+					if (nextArray[j] == nextArray[i])
+					{//If this word is already in the list
+						uniqueWord = false;
+					}
+				}
+				
+				if (uniqueWord)
+				{
+					nextArray.push(wordArray[i]);
+				}
 			}
 		}
 		
