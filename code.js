@@ -65,9 +65,49 @@ function maxLineLengthFunc(txt)
 	return 33;
 }
 
+function reverseString(inString)
+{//Function for reversing a string to be used for palindromes
+	var reverseString = "";
+	
+	for (i = inString.length - 1; i >= 0; i--)
+	{
+		reverseString += inString.charAt(i);
+	}
+	
+	return reverseString;
+}
+
 function palindromesFunc(txt)
 {
-	return 0;
+	var currentString = txt;
+	currentString = currentString.toLowerCase();
+	var wordArray = currentString.match(/[a-z0-9]+/g);
+	var palindromeArray = [];
+	
+	for (i = 0; i < wordArray.length; i++)
+	{
+		var word = wordArray[i];
+		var reverseWord = reverseString(word);
+		
+		if (word == reverseWord)
+		{
+			var uniqueWord = true;
+			for (j = 0; j < palindromeArray.length; j++)
+			{
+				if (palindromeArray[j] == word)
+				{//If this word is already in the list
+					uniqueWord = false;
+				}
+			}
+			
+			if (uniqueWord)
+			{
+				palindromeArray.push(word);
+			}
+		}
+	}
+	
+	return palindromeArray;
 }
 
 function longestWordsFunc(txt)
