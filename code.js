@@ -32,6 +32,8 @@ function nWordsFunc(txt)
 
 function nLinesFunc(txt)
 {
+	var currentString = txt;
+	currentString = currentString.toLowerCase();
 	var lineArray = currentString.split("\n");
 	return lineArray.length;
 	
