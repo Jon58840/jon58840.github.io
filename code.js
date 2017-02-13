@@ -34,7 +34,7 @@ function nLinesFunc(txt)
 {
 	var currentString = txt;
 	currentString = currentString.toLowerCase();
-	var lineArray = currentString.split("\n");
+	var lineArray = currentString.split(/\n/g)||[]);
 	return lineArray.length;
 	
 	//return 10;
