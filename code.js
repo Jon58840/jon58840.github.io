@@ -87,7 +87,12 @@ function palindromesFunc(txt)
 	for (i = 0; i < wordArray.length; i++)
 	{
 		var word = wordArray[i];
-		var reverseWord = reverseString(word);
+		var reverseWord = "";
+		
+		for (j = wordArray[i].length - 1; j >= 0;j--)
+        {
+            reverseWord += wordArray[i].charAt(j);
+        }
 		
 		if (word == reverseWord)
 		{
