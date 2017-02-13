@@ -101,7 +101,7 @@ function longestWordsFunc(txt)
 				var uniqueWord = true;
 				for (j = 0; j < nextArray.length; j++)
 				{
-					if (nextArray[j] == nextArray[i])
+					if (nextArray[j] == wordArray[i])
 					{//If this word is already in the list
 						uniqueWord = false;
 					}
