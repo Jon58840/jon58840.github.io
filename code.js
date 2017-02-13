@@ -260,14 +260,11 @@ function mostFrequentWordsFunc(txt)
 	}
 	
 	var returnArray = []
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < sortedWordsArray.length; i++)
 	{
 		returnArray.push(sortedWordsArray[i] + "(" + countedWordsArray[i] + ")");
 	}
 	
 	
 	return returnArray;
-	/*
-	var dummyArray = ["hello(7)", "world(1)"];
-	return dummyArray;*/
 }
