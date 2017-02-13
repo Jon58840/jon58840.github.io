@@ -3,7 +3,7 @@
 //
 function getStats(txt) {
     return {
-        nChars: 123,
+        nChars: nCharsFunc(txt),
         nWords: 22,
         nLines: 10,
         nNonEmptyLines: 22,
@@ -11,12 +11,11 @@ function getStats(txt) {
         maxLineLength: 33,
         palindromes: ["12321", "kayak", "mom"],
         longestWords: ["xxxxxxxxx", "123444444"],
-        mostFrequentWords: ["hello(7)", "world(1)"],
-		garbage: txt
+        mostFrequentWords: ["hello(7)", "world(1)"]
     };
 }
-/*
+
 function nCharsFunc(txt)
 {
 	return txt.length;
-}*/
+}
