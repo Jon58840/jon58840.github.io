@@ -65,18 +65,6 @@ function maxLineLengthFunc(txt)
 	return 33;
 }
 
-function reverseString(inString)
-{//Function for reversing a string to be used for palindromes
-	var reverseString = "";
-	
-	for (i = inString.length - 1; i >= 0; i--)
-	{
-		reverseString += inString.charAt(i);
-	}
-	
-	return reverseString;
-}
-
 function palindromesFunc(txt)
 {
 	var currentString = txt;
@@ -89,8 +77,15 @@ function palindromesFunc(txt)
 		var word = wordArray[i];
 		var reverseWord = "";
 		
+		if (wordArray[i].length < 3)
+		{//If the word is too short, skip over it
+			continue;
+		}
+		
 		for (j = wordArray[i].length - 1; j >= 0;j--)
-        {
+        {//Reverse the letters of the word
+			//I'm using wordArray here instead of word because word makes it freeze
+			//I'm not sure why
             reverseWord += wordArray[i].charAt(j);
         }
 		
