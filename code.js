@@ -11,7 +11,7 @@ function getStats(txt) {
         maxLineLength: maxLineLengthFunc(txt),
         palindromes: palindromesFunc(txt),
         longestWords: longestWordsFunc(txt),
-        mostFrequentWords: ["hello(7)", "world(1)"]
+        mostFrequentWords: mostFrequentWordsFunc(txt)
     };
 }
 
