@@ -36,13 +36,27 @@ function nLinesFunc(txt)
 	currentString = currentString.toLowerCase();
 	var lineArray = currentString.split(/\n/g||[]);
 	return lineArray.length;
-	
-	//return 10;
 }
 
 function nNonEmptyLinesFuncFunc(txt)
 {
-	return 22;
+	var currentString = txt;
+	currentString = currentString.toLowerCase();
+	var lineArray = currentString.split(/\n/g||[]);
+	
+	var nonEmptyLines = 0;
+	
+	for (i = 0; i < lineArray.length; i++)
+	{//For each line in the array
+		if (lineArray[i].length != 0)
+		{
+			nonEmptyLines++;
+		}
+	}
+	
+	return nonEmptyLines;
+	
+	//return 22;
 }
 
 function averageWordLengthFunc(txt)
