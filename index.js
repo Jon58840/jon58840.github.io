@@ -4,11 +4,16 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 
-http.listen( port, function () {
+app.use(express.static(__dirname + '/public'));
+
+app.get('/', function(req, res){
+	res.send('<h1>Hello worrld</h1>');
+});
+
+http.listen(port, function() {
     console.log('listening on port', port);
 });
 
-app.use(express.static(__dirname + '/public'));
 
 // listen to 'chat' messages
 io.on('connection', function(socket){
