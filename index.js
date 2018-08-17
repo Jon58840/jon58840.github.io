@@ -703,7 +703,7 @@ function readAllCookies()
 function readBasicCookies()
 {
   gameState = parseInt(getCookie("gameState"));
-  turnPlayer = parseInt(getCookie("turnPlayer"));
+  turnPlayer = getCookie("turnPlayer");
   fireCount = parseInt(getCookie("fireCount"));
   
   shotsPlayer1 = parseInt(getCookie("shotsPlayer1"));
