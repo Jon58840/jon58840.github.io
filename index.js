@@ -100,6 +100,10 @@ function loadFunction()
     {
       activateTurnButton(true);
     }
+    else
+    {
+      activateTurnButton(false);
+    }
   }
   else
   {//Otherwise start a new game.
