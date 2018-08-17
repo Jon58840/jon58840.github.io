@@ -701,29 +701,50 @@ function readAllCookies()
   readBasicCookies();
   
   readGridCookie("gridPlayer1", gridPlayer1);
+  readGridCookie("gridPlayer2", gridPlayer2);
+  
+  readShipCookie("shipSectionsPlayer1", shipSectionsPlayer1);
+  readShipCookie("shipSectionsPlayer2", shipSectionsPlayer2);
 }
 
 function readBasicCookies()
 {
-  console.log("gameState: " + getCookie("gameState"));
-  console.log("turnPlayer: " + getCookie("turnPlayer"));
-  console.log("fireCount: " + getCookie("fireCount"));
+  gameState = getCookie("gameState");
+  turnPlayer = getCookie("turnPlayer");
+  fireCount = getCookie("fireCount");
+  
+  shotsPlayer1 = getCookie("shotsPlayer1");
+  hitsPlayer1 = getCookie("hitsPlayer1");
+  
+  shotsPlayer2 = getCookie("shotsPlayer2");
+  hitsPlayer2 = getCookie("hitsPlayer2");
 }
 
 function readGridCookie(cookieName, playerGrid)
 {
+  //Get cookie and create an empty grid
   cookieValue = getCookie(cookieName);
   playerGrid = createEmptyGrid();
   
   for (var i = 0; i < playerGrid.length; i++)
-  { 
+  {
     for (var j = 0; j < playerGrid[i].length; j++)
-    {
+    {//Iterate through the array of arrays placing the appropriate values into place
       playerGrid[i][j] = cookieValue[(i * 8) + j];
     }
   }
+}
+
+function readShipCookie(cookieName, playerShips)
+{
+  //Get cookie and create an empty grid
+  cookieValue = getCookie(cookieName);
+  playerShips = [4, 4, 4, 4, 4];
   
-  console.log(playerGrid);
+  for (var i = 0; i < playerShips.length; i++)
+  {
+    playerShips[i] = cookieValue[i];
+  }
 }
 
 function createCookie(cookieName, cookieValue)
