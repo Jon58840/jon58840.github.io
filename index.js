@@ -673,6 +673,8 @@ function createGridCookie(cookieName, playerGrid)
     }
   }
   
+  console.log(cookieValue);
+  
   createCookie(cookieName, cookieValue);
 }
 
