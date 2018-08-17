@@ -699,6 +699,8 @@ function createShipCookie(cookieName, playerShips)
 function readAllCookies()
 {
   readBasicCookies();
+  
+  readGridCookie("gridPlayer1", gridPlayer1);
 }
 
 function readBasicCookies()
@@ -706,6 +708,21 @@ function readBasicCookies()
   console.log("gameState: " + getCookie("gameState"));
   console.log("turnPlayer: " + getCookie("turnPlayer"));
   console.log("fireCount: " + getCookie("fireCount"));
+}
+
+function readGridCookie(cookieName, playerGrid)
+{
+  cookieValue = getCookie(cookieName);
+  
+  for (var i = 0; i < playerGrid.length; i++)
+  {
+    for (var j = 0; j < playerGrid[i].length; j++)
+    {
+      playerGrid[i][j] = cookieValue[(i * 8) + j];
+    }
+  }
+  
+  console.log(playerGrid);
 }
 
 function createCookie(cookieName, cookieValue)
