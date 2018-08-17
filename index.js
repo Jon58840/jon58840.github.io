@@ -696,12 +696,8 @@ function createShipCookie(cookieName, playerShips)
 function readAllCookies()
 {
   readBasicCookies();
-  
-  readGridCookie("gridPlayer1", gridPlayer1);
-  readGridCookie("gridPlayer2", gridPlayer2);
-  
-  readShipCookie("shipSectionsPlayer1", shipSectionsPlayer1);
-  readShipCookie("shipSectionsPlayer2", shipSectionsPlayer2);
+  readGridCookies();
+  readShipCookies();
 }
 
 function readBasicCookies()
@@ -717,30 +713,49 @@ function readBasicCookies()
   hitsPlayer2 = parseInt(getCookie("hitsPlayer2"));
 }
 
-function readGridCookie(cookieName, playerGrid)
+function readGridCookies()
 {
-  //Get cookie and create an empty grid
-  cookieValue = getCookie(cookieName);
-  playerGrid = createEmptyGrid();
+  //Get cookie and create empty grids
+  var cookieValue1 = getCookie("gridPlayer1");
+  var cookieValue2 = getCookie("gridPlayer2");
   
-  for (var i = 0; i < playerGrid.length; i++)
+  gridPlayer1 = createEmptyGrid();
+  gridPlayer2 = createEmptyGrid();
+  
+  for (var i = 0; i < gridPlayer1.length; i++)
   {
-    for (var j = 0; j < playerGrid[i].length; j++)
+    for (var j = 0; j < gridPlayer1[i].length; j++)
     {//Iterate through the array of arrays placing the appropriate values into place
-      playerGrid[i][j] = parseInt(cookieValue[(i * 8) + j]);
+      gridPlayer1[i][j] = parseInt(cookieValue1[(i * 8) + j]);
+    }
+  }
+  
+  for (var i = 0; i < gridPlayer2.length; i++)
+  {
+    for (var j = 0; j < gridPlayer2[i].length; j++)
+    {//Iterate through the array of arrays placing the appropriate values into place
+      gridPlayer2[i][j] = parseInt(cookieValue2[(i * 8) + j]);
     }
   }
 }
 
-function readShipCookie(cookieName, playerShips)
+function readShipCookies()
 {
-  //Get cookie and create an empty grid
-  cookieValue = getCookie(cookieName);
-  playerShips = [4, 4, 4, 4, 4];
+  //Get cookie and create base arrays
+  var cookieValue1 = getCookie("shipSectionsPlayer1");
+  var cookieValue2 = getCookie("shipSectionsPlayer2");
   
-  for (var i = 0; i < playerShips.length; i++)
+  shipSectionsPlayer1 = [4, 4, 4, 4, 4];
+  shipSectionsPlayer2 = [4, 4, 4, 4, 4];
+  
+  for (var i = 0; i < shipSectionsPlayer1.length; i++)
   {
-    playerShips[i] = parseInt(cookieValue[i]);
+    shipSectionsPlayer1[i] = parseInt(cookieValue1[i]);
+  }
+  
+  for (var i = 0; i < shipSectionsPlayer2.length; i++)
+  {
+    shipSectionsPlayer2[i] = parseInt(cookieValue2[i]);
   }
 }
 
