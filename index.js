@@ -645,7 +645,8 @@ function createAllCookies()
   createGridCookie("gridPlayer1", gridPlayer1);
   createGridCookie("gridPlayer2", gridPlayer2);
   
-  createShipCookies();
+  createShipCookie("shipSectionsPlayer1", shipSectionsPlayer1);
+  createShipCookie("shipSectionsPlayer2", shipSectionsPlayer2);
 }
 
 function createBasicCookies()
@@ -673,14 +674,17 @@ function createGridCookie(cookieName, playerGrid)
     }
   }
   
-  console.log(cookieValue);
-  
   createCookie(cookieName, cookieValue);
 }
 
-function createShipCookies()
+function createShipCookie(cookieName, playerShips)
 {
+  for (var i = 0; i < playerShips.length; i++)
+  {
+    cookieValue = cookieValue + playerShips[i];
+  }
   
+  createCookie(cookieName, cookieValue);
 }
 
 function createCookie(cookieName, cookieValue)
