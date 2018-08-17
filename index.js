@@ -703,9 +703,9 @@ function readAllCookies()
 
 function readBasicCookies()
 {
-  console.log("gameState:" getCookie("gameState"));
-  console.log("turnPlayer:" getCookie("turnPlayer"));
-  console.log("fireCount:" getCookie("fireCount"));
+  console.log("gameState: " + getCookie("gameState"));
+  console.log("turnPlayer: " + getCookie("turnPlayer"));
+  console.log("fireCount: " + getCookie("fireCount"));
 }
 
 function createCookie(cookieName, cookieValue)
