@@ -290,8 +290,8 @@ function nextTurn()
   
   //Reset fire count and change to game screen
   fireCount = 0;
-  createAllCookies();
   switchScreen(STATE_GAME);
+  createAllCookies();
 }
 
 function activateTurnButton(activateStatus)
