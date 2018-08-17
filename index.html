@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+  <div id="titleBox">
+    <h1 id="titleHeader">Battleship</h1>
+    <h2 id="playerHeader"></h2>
+  </div>
+
+  <div id="screenGame">
+    <div id="mainBox">
+      <div id="leftColumn">
+      
+        <div id ="battleGridPlayer" class="gameGrid">
+          <div class="gridCell" data-x="0" data-y="0"></div>
+          <div class="gridCell" data-x="1" data-y="0"></div>
+          <div class="gridCell" data-x="2" data-y="0"></div>
+          <div class="gridCell" data-x="3" data-y="0"></div>
+          <div class="gridCell" data-x="4" data-y="0"></div>
+          <div class="gridCell" data-x="5" data-y="0"></div>
+          <div class="gridCell" data-x="6" data-y="0"></div>
+          <div class="gridCell" data-x="7" data-y="0"></div>
+          <div class="gridCell" data-x="0" data-y="1"></div>
+          <div class="gridCell" data-x="1" data-y="1"></div>
+          <div class="gridCell" data-x="2" data-y="1"></div>
+          <div class="gridCell" data-x="3" data-y="1"></div>
+          <div class="gridCell" data-x="4" data-y="1"></div>
+          <div class="gridCell" data-x="5" data-y="1"></div>
+          <div class="gridCell" data-x="6" data-y="1"></div>
+          <div class="gridCell" data-x="7" data-y="1"></div>
+          <div class="gridCell" data-x="0" data-y="2"></div>
+          <div class="gridCell" data-x="1" data-y="2"></div>
+          <div class="gridCell" data-x="2" data-y="2"></div>
+          <div class="gridCell" data-x="3" data-y="2"></div>
+          <div class="gridCell" data-x="4" data-y="2"></div>
+          <div class="gridCell" data-x="5" data-y="2"></div>
+          <div class="gridCell" data-x="6" data-y="2"></div>
+          <div class="gridCell" data-x="7" data-y="2"></div>
+          <div class="gridCell" data-x="0" data-y="3"></div>
+          <div class="gridCell" data-x="1" data-y="3"></div>
+          <div class="gridCell" data-x="2" data-y="3"></div>
+          <div class="gridCell" data-x="3" data-y="3"></div>
+          <div class="gridCell" data-x="4" data-y="3"></div>
+          <div class="gridCell" data-x="5" data-y="3"></div>
+          <div class="gridCell" data-x="6" data-y="3"></div>
+          <div class="gridCell" data-x="7" data-y="3"></div>
+          <div class="gridCell" data-x="0" data-y="4"></div>
+          <div class="gridCell" data-x="1" data-y="4"></div>
+          <div class="gridCell" data-x="2" data-y="4"></div>
+          <div class="gridCell" data-x="3" data-y="4"></div>
+          <div class="gridCell" data-x="4" data-y="4"></div>
+          <div class="gridCell" data-x="5" data-y="4"></div>
+          <div class="gridCell" data-x="6" data-y="4"></div>
+          <div class="gridCell" data-x="7" data-y="4"></div>
+          <div class="gridCell" data-x="0" data-y="5"></div>
+          <div class="gridCell" data-x="1" data-y="5"></div>
+          <div class="gridCell" data-x="2" data-y="5"></div>
+          <div class="gridCell" data-x="3" data-y="5"></div>
+          <div class="gridCell" data-x="4" data-y="5"></div>
+          <div class="gridCell" data-x="5" data-y="5"></div>
+          <div class="gridCell" data-x="6" data-y="5"></div>
+          <div class="gridCell" data-x="7" data-y="5"></div>
+          <div class="gridCell" data-x="0" data-y="6"></div>
+          <div class="gridCell" data-x="1" data-y="6"></div>
+          <div class="gridCell" data-x="2" data-y="6"></div>
+          <div class="gridCell" data-x="3" data-y="6"></div>
+          <div class="gridCell" data-x="4" data-y="6"></div>
+          <div class="gridCell" data-x="5" data-y="6"></div>
+          <div class="gridCell" data-x="6" data-y="6"></div>
+          <div class="gridCell" data-x="7" data-y="6"></div>
+          <div class="gridCell" data-x="0" data-y="7"></div>
+          <div class="gridCell" data-x="1" data-y="7"></div>
+          <div class="gridCell" data-x="2" data-y="7"></div>
+          <div class="gridCell" data-x="3" data-y="7"></div>
+          <div class="gridCell" data-x="4" data-y="7"></div>
+          <div class="gridCell" data-x="5" data-y="7"></div>
+          <div class="gridCell" data-x="6" data-y="7"></div>
+          <div class="gridCell" data-x="7" data-y="7"></div>
+        </div>
+        
+        <div id ="battleGridOpponent" class="gameGrid">
+          <div class="gridCell" data-x="0" data-y="0"></div>
+          <div class="gridCell" data-x="1" data-y="0"></div>
+          <div class="gridCell" data-x="2" data-y="0"></div>
+          <div class="gridCell" data-x="3" data-y="0"></div>
+          <div class="gridCell" data-x="4" data-y="0"></div>
+          <div class="gridCell" data-x="5" data-y="0"></div>
+          <div class="gridCell" data-x="6" data-y="0"></div>
+          <div class="gridCell" data-x="7" data-y="0"></div>
+          <div class="gridCell" data-x="0" data-y="1"></div>
+          <div class="gridCell" data-x="1" data-y="1"></div>
+          <div class="gridCell" data-x="2" data-y="1"></div>
+          <div class="gridCell" data-x="3" data-y="1"></div>
+          <div class="gridCell" data-x="4" data-y="1"></div>
+          <div class="gridCell" data-x="5" data-y="1"></div>
+          <div class="gridCell" data-x="6" data-y="1"></div>
+          <div class="gridCell" data-x="7" data-y="1"></div>
+          <div class="gridCell" data-x="0" data-y="2"></div>
+          <div class="gridCell" data-x="1" data-y="2"></div>
+          <div class="gridCell" data-x="2" data-y="2"></div>
+          <div class="gridCell" data-x="3" data-y="2"></div>
+          <div class="gridCell" data-x="4" data-y="2"></div>
+          <div class="gridCell" data-x="5" data-y="2"></div>
+          <div class="gridCell" data-x="6" data-y="2"></div>
+          <div class="gridCell" data-x="7" data-y="2"></div>
+          <div class="gridCell" data-x="0" data-y="3"></div>
+          <div class="gridCell" data-x="1" data-y="3"></div>
+          <div class="gridCell" data-x="2" data-y="3"></div>
+          <div class="gridCell" data-x="3" data-y="3"></div>
+          <div class="gridCell" data-x="4" data-y="3"></div>
+          <div class="gridCell" data-x="5" data-y="3"></div>
+          <div class="gridCell" data-x="6" data-y="3"></div>
+          <div class="gridCell" data-x="7" data-y="3"></div>
+          <div class="gridCell" data-x="0" data-y="4"></div>
+          <div class="gridCell" data-x="1" data-y="4"></div>
+          <div class="gridCell" data-x="2" data-y="4"></div>
+          <div class="gridCell" data-x="3" data-y="4"></div>
+          <div class="gridCell" data-x="4" data-y="4"></div>
+          <div class="gridCell" data-x="5" data-y="4"></div>
+          <div class="gridCell" data-x="6" data-y="4"></div>
+          <div class="gridCell" data-x="7" data-y="4"></div>
+          <div class="gridCell" data-x="0" data-y="5"></div>
+          <div class="gridCell" data-x="1" data-y="5"></div>
+          <div class="gridCell" data-x="2" data-y="5"></div>
+          <div class="gridCell" data-x="3" data-y="5"></div>
+          <div class="gridCell" data-x="4" data-y="5"></div>
+          <div class="gridCell" data-x="5" data-y="5"></div>
+          <div class="gridCell" data-x="6" data-y="5"></div>
+          <div class="gridCell" data-x="7" data-y="5"></div>
+          <div class="gridCell" data-x="0" data-y="6"></div>
+          <div class="gridCell" data-x="1" data-y="6"></div>
+          <div class="gridCell" data-x="2" data-y="6"></div>
+          <div class="gridCell" data-x="3" data-y="6"></div>
+          <div class="gridCell" data-x="4" data-y="6"></div>
+          <div class="gridCell" data-x="5" data-y="6"></div>
+          <div class="gridCell" data-x="6" data-y="6"></div>
+          <div class="gridCell" data-x="7" data-y="6"></div>
+          <div class="gridCell" data-x="0" data-y="7"></div>
+          <div class="gridCell" data-x="1" data-y="7"></div>
+          <div class="gridCell" data-x="2" data-y="7"></div>
+          <div class="gridCell" data-x="3" data-y="7"></div>
+          <div class="gridCell" data-x="4" data-y="7"></div>
+          <div class="gridCell" data-x="5" data-y="7"></div>
+          <div class="gridCell" data-x="6" data-y="7"></div>
+          <div class="gridCell" data-x="7" data-y="7"></div>
+        </div>
+      </div>
+      
+      <div id="rightColumn">
+        <button id="resetButton">Reset</button>
+        <div id="rightTopBar" class="headerBar">
+          <h3 id="eventsHeader">Game Events</h3>
+        </div>
+        <ul id="messageList"></ul>
+        <button id="turnButton">End Turn</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="screenLobby">
+    <h1>Welcome to BATTLESHIP!</h1>
+    <h2>Please press START to begin the game</h2>
+    <button id="startButton" class="screenButton">START</button>
+  </div>
+  
+  <div id="screenTurn">
+    <h1 id="messageEndTurn">End Turn Placeholder Message</h1>
+    <h2>Press CONFIRM to move to the next player's turn.</h2>
+    <button id="buttonTurnConfirm" class="screenButton">CONFIRM</button>
+  </div>
+  
+  <div id="screenEnd">
+    <h1>GAME OVER</h1>
+    <h2 id="victoryHeader">Victory Message Placeholder</h2>
+    <div id="endBox">
+      <div id="endLeft">
+        <div id="statsPlayer1Bar" class="headerBar">
+          <h3 id="statsPlayer1Header">Player 1 Stats:</h3>
+        </div>
+        <ul id="statsPlayer1List"></ul>
+      </div>
+      <div id="endRight">
+        <div id="statsPlayer2Bar" class="headerBar">
+          <h3 id="statsPlayer2Header">Player 2 Stats:</h3>
+        </div>
+        <ul id="statsPlayer2List"></ul>
+      </div>
+    </div>
+    <button id="endResetButton" class="screenButton">Restart</button>
+  </div>
+
+  <script src="index.js"></script>
+  </body>
+</html>
