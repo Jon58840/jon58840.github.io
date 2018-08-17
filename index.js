@@ -172,7 +172,7 @@ function fireAttempt(e)
     if (fireCount >= FIRE_LIMIT)
       activateTurnButton(true);
     
-    createAllCookies()
+    createAllCookies();
   }
   
   e.stopPropagation();
@@ -190,8 +190,8 @@ function turnPage()
   {
     switchScreen(STATE_TURN);
     activateTurnButton(false);
+    createAllCookies();
   }
-  createAllCookies();
 }
 
 function resetGame()
@@ -215,7 +215,7 @@ function newGame()
   
   document.getElementById("messageList").innerHTML = "";
   activateTurnButton(false);
-  createAllCookies()
+  createAllCookies();
 }
 
 function fillGrids()
@@ -325,7 +325,7 @@ function gameEnd()
   
   populateStats();
   switchScreen(STATE_END);
-  createAllCookies()
+  createAllCookies();
 }
 
 function populateStats()
