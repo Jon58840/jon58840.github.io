@@ -256,6 +256,7 @@ function switchScreen(newGameState)
   
   if (newGameState === STATE_START)
   {
+    clearTurnPlayerMessage();
     screenStart.style.display = "block";
   }
   else if (newGameState === STATE_GAME)
@@ -266,10 +267,12 @@ function switchScreen(newGameState)
   }
   else if (newGameState === STATE_TURN)
   {
+    clearTurnPlayerMessage();
     screenTurn.style.display = "block";
   }
   else if (newGameState === STATE_END)
   {
+    clearTurnPlayerMessage();
     screenEnd.style.display = "block";
   }
 }
@@ -883,7 +886,13 @@ function turnPlayerMessage()
   var playerHeader = document.getElementById("playerHeader");
   
   if (turnPlayer == player1)
-    playerHeader = "Player 1's Turn";
+    playerHeader.innerHTML = "Player 1's Turn";
   else
-    playerHeader = "Player 2's Turn";
+    playerHeader.innerHTML = "Player 2's Turn";
+}
+
+function clearTurnPlayerMessage()
+{
+  var playerHeader = document.getElementById("playerHeader");
+  playerHeader.innerHTML = "";
 }
