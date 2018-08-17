@@ -260,6 +260,7 @@ function switchScreen(newGameState)
   }
   else if (newGameState === STATE_GAME)
   {//Switching to the game screen requires redrawing the grids in addition to displaying the screen.
+    turnPlayerMessage();
     drawGrids();
     screenGame.style.display = "block";
   }
@@ -283,6 +284,7 @@ function nextTurn()
   
   //Reset fire count and change to game screen
   fireCount = 0;
+  createAllCookies();
   switchScreen(STATE_GAME);
 }
 
@@ -874,4 +876,14 @@ function resetShotData()
   shotsPlayer2 = 0;
   hitsPlayer1 = 0;
   hitsPlayer2 = 0;
+}
+
+function turnPlayerMessage()
+{
+  var playerHeader = document.getElementById("playerHeader");
+  
+  if (turnPlayer == player1)
+    playerHeader = "Player 1's Turn";
+  else
+    playerHeader = "Player 2's Turn";
 }
