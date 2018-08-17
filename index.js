@@ -713,7 +713,7 @@ function readBasicCookies()
 function readGridCookie(cookieName, playerGrid)
 {
   cookieValue = getCookie(cookieName);
-  playerGrid = [8][8];
+  playerGrid = createEmptyGrid();
   
   for (var i = 0; i < playerGrid.length; i++)
   { 
