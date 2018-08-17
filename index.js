@@ -84,10 +84,14 @@ document.getElementById("endResetButton").addEventListener("click", newGame, fal
 
 function loadFunction()
 {//Page load
-  readAllCookies();
+  if (getCookie("gameState") != "")
+    readAllCookies();
+  else
+    gameState = STATE_START;
+  
   console.log("Game State: " + gameState);
   
-  if(gameState === STATE_GAME || gameState === STATE_TURN)
+  if(gameState == STATE_GAME || gameState == STATE_TURN)
   {//If there is an ongoing game, switch to appropriate screen, deal with next turn button as necessary
     console.log("Attempting load");
     switchScreen(gameState);
