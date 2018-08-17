@@ -679,6 +679,8 @@ function createGridCookie(cookieName, playerGrid)
 
 function createShipCookie(cookieName, playerShips)
 {
+  var cookieValue = "";
+  
   for (var i = 0; i < playerShips.length; i++)
   {
     cookieValue = cookieValue + playerShips[i];
