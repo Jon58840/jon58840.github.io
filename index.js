@@ -87,11 +87,16 @@ function loadFunction()
   readAllCookies();
   
   if(gameState === STATE_GAME || gameState === STATE_TURN)
-  {
+  {//If there is an ongoing game, switch to appropriate screen, deal with next turn button as necessary
+    switchScreen(gameState);
     
+    if (fireCount >= FIRE_LIMIT)
+      activateTurnButton(true);
   }
-  
-  newGame();
+  else
+  {//Otherwise start a new game.
+    newGame();
+  }
 }
 
 function fireAttempt(e)
@@ -157,6 +162,8 @@ function fireAttempt(e)
     hasFired();
     if (fireCount >= FIRE_LIMIT)
       activateTurnButton(true);
+    
+    createAllCookies()
   }
   
   e.stopPropagation();
@@ -165,6 +172,7 @@ function fireAttempt(e)
 function startGame()
 {
   switchScreen(STATE_GAME);
+  createAllCookies()
 }
 
 function turnPage()
@@ -200,6 +208,7 @@ function newGame()
   
   document.getElementById("messageList").innerHTML = "";
   activateTurnButton(false);
+  createAllCookies()
 }
 
 function fillGrids()
@@ -303,7 +312,7 @@ function gameEnd()
   
   populateStats();
   switchScreen(STATE_END);
-  
+  createAllCookies()
 }
 
 function populateStats()
@@ -622,27 +631,6 @@ function shipHit(shipType)
 
 /*
 * Cookie Functions
-*/
-
-/*
-var gameState = STATE_START;
-
-var turnPlayer = player1;
-var fireCount = 0;
-
-var shotsPlayer1 = 0;
-var hitsPlayer1 = 0;
-
-var shotsPlayer2 = 0;
-var hitsPlayer2 = 0;
-
-//Array of arrays holding the state of each player's grids
-var gridPlayer1 = [];
-var gridPlayer2 = [];
-
-//5 member array, 0th index is total ships alive, 1-4 refer to the ships themselves and their parts
-var shipSectionsPlayer1 = [];
-var shipSectionsPlayer2 = [];
 */
 
 function createAllCookies()
