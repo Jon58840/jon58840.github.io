@@ -665,9 +665,9 @@ function createGridCookie(cookieName, playerGrid)
 {
   var cookieValue = "";
   
-  for (var i = 0; i < playerGrid[i].length); i++)
+  for (var i = 0; i < playerGrid[i].length; i++)
   {
-    for (var j = 0; i < playerGrid[i][j].length); j++)
+    for (var j = 0; i < playerGrid[i][j].length; j++)
     {
       cookieValue = cookieValue + playerGrid[i][j];
     }
