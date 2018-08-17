@@ -84,6 +84,13 @@ document.getElementById("endResetButton").addEventListener("click", newGame, fal
 
 function loadFunction()
 {//Page load
+  readAllCookies();
+  
+  if(gameState === STATE_GAME || gameState === STATE_TURN)
+  {
+    
+  }
+  
   newGame();
 }
 
@@ -687,6 +694,18 @@ function createShipCookie(cookieName, playerShips)
   }
   
   createCookie(cookieName, cookieValue);
+}
+
+function readAllCookies()
+{
+  readBasicCookies();
+}
+
+function readBasicCookies()
+{
+  console.log("gameState:" getCookie("gameState"));
+  console.log("turnPlayer:" getCookie("turnPlayer"));
+  console.log("fireCount:" getCookie("fireCount"));
 }
 
 function createCookie(cookieName, cookieValue)
