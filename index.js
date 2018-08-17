@@ -186,8 +186,6 @@ function startGame()
 
 function turnPage()
 {
-  document.getElementById("messageEndTurn").innerHTML = turnPlayer + " has ended their turn.";
-  
   if (fireCount >= FIRE_LIMIT)
   {
     switchScreen(STATE_TURN);
@@ -267,6 +265,7 @@ function switchScreen(newGameState)
   }
   else if (newGameState === STATE_TURN)
   {
+    document.getElementById("messageEndTurn").innerHTML = turnPlayer + " has ended their turn.";
     clearTurnPlayerMessage();
     screenTurn.style.display = "block";
   }
