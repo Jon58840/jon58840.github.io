@@ -702,15 +702,15 @@ function readAllCookies()
 
 function readBasicCookies()
 {
-  gameState = getCookie("gameState");
-  turnPlayer = getCookie("turnPlayer");
-  fireCount = getCookie("fireCount");
+  gameState = parseInt(getCookie("gameState"));
+  turnPlayer = parseInt(getCookie("turnPlayer"));
+  fireCount = parseInt(getCookie("fireCount"));
   
-  shotsPlayer1 = getCookie("shotsPlayer1");
-  hitsPlayer1 = getCookie("hitsPlayer1");
+  shotsPlayer1 = parseInt(getCookie("shotsPlayer1"));
+  hitsPlayer1 = parseInt(getCookie("hitsPlayer1"));
   
-  shotsPlayer2 = getCookie("shotsPlayer2");
-  hitsPlayer2 = getCookie("hitsPlayer2");
+  shotsPlayer2 = parseInt(getCookie("shotsPlayer2"));
+  hitsPlayer2 = parseInt(getCookie("hitsPlayer2"));
 }
 
 function readGridCookie(cookieName, playerGrid)
@@ -723,7 +723,7 @@ function readGridCookie(cookieName, playerGrid)
   {
     for (var j = 0; j < playerGrid[i].length; j++)
     {//Iterate through the array of arrays placing the appropriate values into place
-      playerGrid[i][j] = cookieValue[(i * 8) + j];
+      playerGrid[i][j] = parseInt(cookieValue[(i * 8) + j]);
     }
   }
 }
@@ -736,7 +736,7 @@ function readShipCookie(cookieName, playerShips)
   
   for (var i = 0; i < playerShips.length; i++)
   {
-    playerShips[i] = cookieValue[i];
+    playerShips[i] = parseInt(cookieValue[i]);
   }
 }
 
