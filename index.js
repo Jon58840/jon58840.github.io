@@ -641,7 +641,10 @@ var shipSectionsPlayer2 = [];
 function createAllCookies()
 {
   createBasicCookies();
-  createGridCookies();
+  
+  createGridCookie("gridPlayer1", gridPlayer1);
+  createGridCookie("gridPlayer2", gridPlayer2);
+  
   createShipCookies();
 }
 
@@ -658,9 +661,19 @@ function createBasicCookies()
   createCookie("hitsPlayer2", hitsPlayer2);
 }
 
-function createGridCookies()
+function createGridCookie(cookieName, playerGrid)
 {
+  var cookieValue = "";
   
+  for (var i = 0; i < playerGrid[i].length); i++)
+  {
+    for (var j = 0; i < playerGrid[i][j].length); j++)
+    {
+      cookieValue = cookieValue + playerGrid[i][j];
+    }
+  }
+  
+  createCookie(cookieName, cookieValue);
 }
 
 function createShipCookies()
@@ -670,11 +683,10 @@ function createShipCookies()
 
 function createCookie(cookieName, cookieValue)
 {//Create a cookie with a given name and value
-console.log("cookie");
-    var cookieLength = new Date();
-    cookieLength.setTime(cookieLength.getTime() + (COOKIE_LENGTH * 24 * 60 * 60 * 1000));
-    var cookieExpiry = "expires="+cookieLength.toUTCString();
-    document.cookie = cookieName + "=" + cookieValue + ";" + cookieExpiry + ";path=/";
+  var cookieLength = new Date();
+  cookieLength.setTime(cookieLength.getTime() + (COOKIE_LENGTH * 24 * 60 * 60 * 1000));
+  var cookieExpiry = "expires="+cookieLength.toUTCString();
+  document.cookie = cookieName + "=" + cookieValue + ";" + cookieExpiry + ";path=/";
 }
 
 /*
