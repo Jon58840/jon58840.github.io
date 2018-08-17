@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", loadFunction, false);
 
 document.getElementById("battleGridOpponent").addEventListener("click", fireAttempt, false);
 
-document.getElementById("resetButton").addEventListener("click", gameEnd, false);
+document.getElementById("resetButton").addEventListener("click", resetGame, false);
 document.getElementById("startButton").addEventListener("click", startGame, false);
 document.getElementById("turnButton").addEventListener("click", turnPage, false);
 document.getElementById("buttonTurnConfirm").addEventListener("click", nextTurn, false);
